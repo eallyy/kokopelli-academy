@@ -21,7 +21,7 @@ export default function Dashboard() {
 
               <div className="p-4">
                 <Link
-                  href="#"
+                  href="/courses/1/modules/1/lessons/1"
                   className="block aspect-video relative w-full overflow-hidden rounded-lg"
                 >
                   {/* Background Image */}

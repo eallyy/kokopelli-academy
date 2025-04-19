@@ -42,7 +42,7 @@ export default function Course() {
                           </div>
 
                           {/* Video kartı ve buton */}
-                          <Link href="#">
+                          <Link href="/courses/1/modules/1/lessons/1">
                               <div className="flex items-center gap-4 drop-shadow-lg">
                                 <div className="relative aspect-video w-32 rounded-md overflow-hidden">
                                   <Image

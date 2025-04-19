@@ -54,8 +54,6 @@ export default function VideoPlayer({
         }
       })
 
-      // Plugins
-      playerRef.current.qualitySelectorHls();
 
       // Altyazı ekle
       subtitles.forEach((track) => {
