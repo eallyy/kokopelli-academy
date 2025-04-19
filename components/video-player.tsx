@@ -1,6 +1,7 @@
 'use client'
 import { useEffect, useRef } from 'react';
 import videojs from 'video.js';
+import Player from 'video.js/dist/types/player';
 import 'video.js/dist/video-js.css';
 import '@/styles/videojs-custom.css';
 
@@ -22,7 +23,7 @@ export default function VideoPlayer({
   watermarkText,
 }: Props) {
   const videoRef = useRef<HTMLVideoElement | null>(null)
-  const playerRef = useRef<videojs.Player | null>(null)
+  const playerRef = useRef<Player | null>(null)
 
   useEffect(() => {
     if (videoRef.current && !playerRef.current) {
