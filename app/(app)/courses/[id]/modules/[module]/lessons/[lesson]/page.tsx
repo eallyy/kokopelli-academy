@@ -3,7 +3,7 @@ import { Field } from '@/components/fieldset';
 import { Select } from '@/components/select';
 import CourseVideoCard from '@/components/course-video-card';
 import MaterialDownloadCard from '@/components/material-download-card';
-import VideoPlayer from '@/components/video-player';
+import { VideoPlayer } from '@/components/video-player';
 
 export default function CourseVideo() {
   return (
@@ -11,12 +11,10 @@ export default function CourseVideo() {
         <div className="pb-5">
           <BackButton />
         </div>
-        <div className="flex flex-col w-full h-full overflow-hidden shadow-sm rounded-lg border border-1 border-cyan-950"> 
+        <div className="flex flex-col w-full h-full overflow-hidden shadow-sm rounded-lg border-1 border-cyan-950"> 
             <div className="grid grid-cols-3 gap-4 p-4">
                 <div className="col-span-3 lg:col-span-2 gap-4">
-                  <VideoPlayer src="/videos/output/master.m3u8"
-                               poster="/images/example-video-thumbnail.png"
-                               watermarkText="Emir"/>                
+                  <VideoPlayer />
 
                   <div className="flex flex-col gap-4 mt-4">
                     <h1 className="text-xl font-bold">Kahvenin Doğuşu: Etiyopya Efsaneleri ve Gerçekler</h1>

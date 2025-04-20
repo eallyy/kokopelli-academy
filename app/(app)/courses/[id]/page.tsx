@@ -16,7 +16,7 @@ export default function Course() {
                 <div className="col-span-3">
                     <div className="relative w-full overflow-hidden rounded-lg isolate lg:border-0 border-1 border-cyan-950 py-4">
                       <Image
-                        src="/images/1.png"
+                        src="/images/course-3-progress-banner.png"
                         alt="Course Banner"
                         fill
                         className="hidden lg:block object-cover z-0 inset-shadow-2xl inset-shadow-white"
@@ -31,7 +31,7 @@ export default function Course() {
                         <div className="space-y-4">
                           <h2 className="text-2xl font-bold text-shadow-lg">Temel Barista Eğitimi</h2>
 
-                          <div className="flex items-center gap-4 drop-shadow-lg">
+                          <div className="flex items-center gap-4 drop-shadow-lg mb-8">
                             <div className="bg-white text-black text-xs font-semibold rounded-full px-4 py-1">
                               56/69 ders
                             </div>
@@ -41,7 +41,7 @@ export default function Course() {
                             <span className="text-sm font-medium">82%</span>
                           </div>
 
-                          {/* Video kartı ve buton */}
+                          {/* Video card and button */}
                           <Link href="/courses/1/modules/1/lessons/1">
                               <div className="flex items-center gap-4 drop-shadow-lg">
                                 <div className="relative aspect-video w-32 rounded-md overflow-hidden">

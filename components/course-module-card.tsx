@@ -12,7 +12,7 @@ type CourseModuleCardProps = {
 export default function CourseModuleCard({ title, desc, img, sources, href }: CourseModuleCardProps) {
     return (
     <Link href={href}>
-      <div className="flex items-center gap-4 border border-cyan-950 rounded-lg bg-gradient-to-tr from-cyan-950 to-black p-4">
+      <div className="flex items-center gap-4 border border-cyan-950 rounded-lg bg-gradient-to-tr from-cyan-950 to-black p-4 transition duration-300 hover:-translate-y-1">
         <div className="relative w-32 aspect-video rounded-md overflow-hidden shrink-0">
           <Image
             src={img}

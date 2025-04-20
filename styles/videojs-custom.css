@@ -1,7 +1,7 @@
 /* ==== BIG PLAY BUTTON (Outline) ==== */
 .video-js .vjs-big-play-button {
   background-color: transparent !important;
-  border: 2px solid #ffffff !important; /* sky-500 */
+  border: 2px solid #ffffff !important;
   border-radius: 9999px !important;
   width: 64px !important;
   height: 64px !important;
@@ -14,13 +14,13 @@
   padding: 0 !important;
 }
 
-/* Hover efekti: içini doldur sky-500 */
+/* Hover effect: fill with sky-500 */
 .video-js .vjs-big-play-button:hover {
   background-color: #0ea5e9 !important;
   border-color: #0ea5e9 !important;
 }
 
-/* Play icon: ortalanmış beyaz */
+/* Play icon: White centered */
 .video-js .vjs-big-play-button .vjs-icon-placeholder::before {
   color: white;
   display: flex;
@@ -31,10 +31,10 @@
   line-height: 1;
 }
 
-/* ==== ACCENT RENK: sky-500 ==== */
+/* ==== ACCENT : sky-500 ==== */
 .video-js .vjs-play-progress,
 .video-js .vjs-volume-level,
 .video-js .vjs-slider-bar {
-  background-color: #0ea5e9 !important; /* sky-500 */
+  background-color: #00a6f4 !important; /* sky-500 */
 }
 
