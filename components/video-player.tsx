@@ -1,94 +1,96 @@
 'use client'
-import { useEffect, useRef } from 'react';
-import videojs from 'video.js';
-import Player from 'video.js/dist/types/player';
-import 'video.js/dist/video-js.css';
+import React from 'react';
+
+// This imports the functional component from the previous sample.
+import VideoJS, { VideoJsPlayer } from './videojs';
 import '@/styles/videojs-custom.css';
 
 // Video.js Plugins
-import 'videojs-quality-selector-hls';
+type Player = VideoJsPlayer & {
+  hlsQualitySelector?: () => void;
+};
 
-type Props = {
-  src: string
-  poster?: string
-  subtitles?: { label: string; src: string; srclang: string; default?: boolean }[]
-  audioTracks?: { label: string; src: string }[] // opsiyonel
-  watermarkText?: string
+import 'videojs-hotkeys';
+import 'videojs-hls-quality-selector';
+
+export const VideoPlayer = () => {
+  const playerRef = React.useRef<VideoJsPlayer | null>(null);
+
+  const videoJsOptions = {
+    poster: '/images/example-video-thumbnail.png',
+    preload: 'metadata',
+    disablePictureInPicture: true,
+    enableDocumentPictureInPicture: false,
+    enableSmoothSeeking: true,
+    language: 'tr',
+    playbackRates: [0.5, 1, 1.5, 2],
+    autoplay: false,
+    controls: true,
+    responsive: true,
+    fluid: true,
+    sources: [{
+      src: 'https://pub-2da385fedc5a4ce5b1855442de31d552.r2.dev/course-1/module-1/lesson-1/video/master.m3u8',
+      type: 'application/x-mpegURL'
+    }],
+    controlBar: {
+      pictureInPictureToggle: false,
+      skipButtons: {
+        backward: 10,
+        forward: 10
+      },
+      children: [
+        'skipBackward',
+        'playToggle',
+        'skipForward',
+        { name: 'volumePanel', inline: false },
+        'progressControl',
+        'remainingTimeDisplay',
+        'playbackRateMenuButton',
+        'subsCapsButton',
+        'fullscreenToggle',
+      ]
+    },
+    spatialNavigation: {
+      enabled: true,
+      horizontalSeek: true
+    }
+  };
+
+  const handlePlayerReady = (player: Player) => {
+    playerRef.current = player;
+
+    // Subtitles Init
+    player.addRemoteTextTrack({
+      kind: 'subtitles',
+      label: 'Türkçe',
+      src: 'https://pub-2da385fedc5a4ce5b1855442de31d552.r2.dev/course-1/module-1/lesson-1/subtitle/tr.vtt',
+      srclang: 'tr'
+    }, false);
+    player.addRemoteTextTrack({
+      kind: 'subtitles',
+      label: 'English',
+      src: 'https://pub-2da385fedc5a4ce5b1855442de31d552.r2.dev/course-1/module-1/lesson-1/subtitle/en.vtt',
+      srclang: 'en',
+      default: true
+    }, false);
+    player.addRemoteTextTrack({
+      kind: 'subtitles',
+      label: 'Japan',
+      src: 'https://pub-2da385fedc5a4ce5b1855442de31d552.r2.dev/course-1/module-1/lesson-1/subtitle/jp.vtt',
+      srclang: 'jp'
+    }, false);
+
+    // VIDEO.JS PLUGIN INITS
+    // Player Hotkeys Plugin Init
+    player.hotkeys({
+    volumeStep: 0.1,
+    seekStep: 10, 
+    enableModifiersForNumbers: false
+    })
+    // HLS Quality Selector
+    player.hlsQualitySelector?.();
+  };
+
+  return (<VideoJS options={videoJsOptions} onReady={handlePlayerReady} />);
 }
 
-export default function VideoPlayer({
-  src,
-  poster,
-  subtitles = [],
-  watermarkText,
-}: Props) {
-  const videoRef = useRef<HTMLVideoElement | null>(null)
-  const playerRef = useRef<Player | null>(null)
-
-  useEffect(() => {
-    if (videoRef.current && !playerRef.current) {
-      playerRef.current = videojs(videoRef.current, {
-        controls: true,
-        autoplay: false,
-        preload: 'auto',
-        responsive: true,
-        fluid: true,
-        poster,
-        sources: [{ src, type: 'application/x-mpegURL' }],
-        controlBar: {
-            children: [
-              'rewindButton',
-              'playToggle',
-              'forwardButton',
-              'volumePanel',
-              'currentTimeDisplay',
-              'timeDivider',
-              'durationDisplay',
-              'progressControl',
-              'playbackRateMenuButton',
-              'qualitySelector',         // from contrib-quality-levels
-              'audioTrackButton',        // for dublaj
-              'subsCapsButton',          // subtitles
-              'fullscreenToggle',
-            ]
-        }
-      })
-
-
-      // Altyazı ekle
-      subtitles.forEach((track) => {
-        playerRef.current?.addRemoteTextTrack(
-          {
-            kind: 'subtitles',
-            label: track.label,
-            src: track.src,
-            srclang: track.srclang,
-            default: track.default || false,
-          },
-          false
-        )
-      })
-    }
-
-    return () => {
-      playerRef.current?.dispose()
-      playerRef.current = null
-    }
-  }, [src])
-
-  return (
-      <div className="relative rounded-lg overflow-hidden bg-black">
-      {watermarkText && (
-        <div className="absolute top-2 right-2 text-xs text-white/20 pointer-events-none z-10">
-          {watermarkText}
-        </div>
-      )}
-
-      <video
-        ref={videoRef}
-        className="video-js vjs-default-skin vjs-big-play-centered w-full h-auto"
-        playsInline
-      />
-    </div>
-  )
-}

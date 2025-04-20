@@ -1,6 +1,7 @@
 'use client'
 import Image from 'next/image';
 import Link from 'next/link';
+import clsx from 'clsx';
 import { LockClosedIcon } from '@heroicons/react/24/outline';
 
 type CourseCardProps = {
@@ -12,7 +13,8 @@ type CourseCardProps = {
 
 export default function CourseCard({ image, alt, href, locked }: CourseCardProps) {
   const CardContent = (
-    <div className="relative aspect-[5/8] w-full overflow-hidden rounded-lg shadow-lg group transition duration-300 hover:-translate-y-1">
+    <div className={clsx("relative aspect-[5/8] w-full overflow-hidden rounded-lg shadow-lg group transition duration-300",
+                        locked ? "" : "hover:-translate-y-1")}>
       <Image
         src={image}
         alt={alt}
