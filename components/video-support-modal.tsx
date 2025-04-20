@@ -79,7 +79,7 @@ export function VideoSupportModal() {
                         Masaüstü / Dizüstü (Windows):
                     </p>
                     <p>
-                        Chrome’un en güncel sürümünü kullanın. İndirmek için: <Link href="https://google.com/chrome" className="underline text-sky-500">google.com/chrome</Link>
+                        Chrome’un en güncel sürümünü kullanın. İndirmek için: <a target="_blank" href="https://google.com/chrome" className="underline text-sky-500">google.com/chrome</a>
                     </p>
                     <p className="mt-4 font-bold">
                         iPhone (iOS):

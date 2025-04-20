@@ -1,15 +1,15 @@
-import { Navbar, NavbarSection } from '@/components/navbar'
+import { Navbar, NavbarSection } from '@/components/navbar';
 import {
   Sidebar,
   SidebarBody,
   SidebarFooter,
   SidebarHeader,
-  SidebarItem,
   SidebarLabel,
   SidebarSection,
   SidebarSpacer,
-} from '@/components/sidebar'
-import { SidebarLayout } from '@/components/sidebar-layout'
+} from '@/components/sidebar';
+import { SidebarItem } from '@/components/sidebar-item';
+import { SidebarLayout } from '@/components/sidebar-layout';
 import {
   Cog6ToothIcon,
   HomeIcon,
@@ -19,7 +19,7 @@ import {
   UsersIcon,
   LightBulbIcon,
   ArrowRightStartOnRectangleIcon,
-} from '@heroicons/react/24/solid'
+} from '@heroicons/react/24/solid';
 import { KokopelliLong } from '@/components/kokopelli-logo';
 import { Profile } from '@/components/sidebar-profile';
 
@@ -57,7 +57,7 @@ export function ApplicationLayout({
                 <DocumentIcon />
                 <SidebarLabel>Kaynaklar</SidebarLabel>
               </SidebarItem>
-              <SidebarItem href="https://instagram.com/kokopellicoffeeco">
+              <SidebarItem href="https://instagram.com/kokopellicoffeeco" external>
                 <UsersIcon />
                 <SidebarLabel>Topluluk</SidebarLabel>
               </SidebarItem>
