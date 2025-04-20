@@ -25,7 +25,7 @@ export default function Login() {
       </div>
       <div className="flex items-center justify-center">
         <Link href="/">
-          <Button type="submit" className="w-fit" color="sky">
+          <Button type="submit" className="w-fit cursor-pointer" color="sky">
             Giriş
           </Button>
         </Link>

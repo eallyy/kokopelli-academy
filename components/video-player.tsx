@@ -45,7 +45,7 @@ export const VideoPlayer = () => {
         { name: 'volumePanel', inline: false },
         'progressControl',
         'remainingTimeDisplay',
-        'playbackRateMenuButton',
+        // 'playbackRateMenuButton', TODO:: Add Playback Rate
         'subsCapsButton',
         'fullscreenToggle',
       ]
