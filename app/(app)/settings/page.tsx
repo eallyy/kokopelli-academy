@@ -9,7 +9,7 @@ export default function Settings() {
           <BackButton />
           <h1 className="text-2xl font-bold mt-4">Ayarlar</h1>
         </div>
-        <div className="overflow-hidden shadow-sm rounded-lg border border-1 border-cyan-950"> 
+        <div className="overflow-hidden shadow-sm rounded-lg border-1 border-cyan-950"> 
             <div className="grid grid-cols-1 gap-4 p-4">
                 <div className="col-span-1">
                     <div>

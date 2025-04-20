@@ -11,7 +11,7 @@ export default function Course() {
           <BackButton />
           <h1 className="text-2xl font-bold mt-4">Eğitimler</h1>
         </div>
-        <div className="overflow-hidden shadow-sm rounded-lg border border-1 border-cyan-950"> 
+        <div className="overflow-hidden shadow-sm rounded-lg border-1 border-cyan-950"> 
             <div className="grid grid-cols-3 gap-4 p-4">
                 <div className="col-span-3">
                     <div className="relative w-full overflow-hidden rounded-lg isolate lg:border-0 border-1 border-cyan-950 py-4">
@@ -74,6 +74,18 @@ export default function Course() {
                       </div>
                     </div>
                 </div>
+                <div className="block lg:hidden col-span-3 my-4 mx-2">
+                    <h2 className="text-lg font-bold">Bu kursta neler var?</h2>
+                    <p className="text-sm font-normal text-zinc-500 py-4">Espresso makinesi kullanımı, kahve çekirdeği seçimi ve süt köpürtme gibi baristalığın temel tekniklerini öğreneceksin. Gerçek kafe deneyimine hazırlanırken hem teorik bilgileri hem de pratik uygulamaları adım adım keşfedeceksin.</p>
+                    <div className="flex items-center gap-2">
+                        <div className="px-3 py-1.5 bg-zinc-700 w-fit h-fit rounded-3xl">
+                          <p className="text-xs text-white">6 Modül</p>
+                        </div>
+                        <div className="px-3 py-1.5 bg-zinc-700 w-fit h-fit rounded-3xl">
+                          <p className="text-xs text-white">58 Kaynak</p>
+                        </div>
+                    </div>
+                </div>
                 <div className="col-span-3 lg:col-span-2">
                   <div className="flex flex-col gap-4">
                     <CourseModuleCard title="Kahvenin Köklerine Yolculuk"
@@ -93,7 +105,7 @@ export default function Course() {
                                       img="/images/example-video-thumbnail.png" />
                   </div>
                 </div>
-                <div className="col-span-1">
+                <div className="hidden lg:block col-span-1">
                     <h2 className="text-lg font-bold">Bu kursta neler var?</h2>
                     <p className="text-sm font-normal text-zinc-500 py-4">Espresso makinesi kullanımı, kahve çekirdeği seçimi ve süt köpürtme gibi baristalığın temel tekniklerini öğreneceksin. Gerçek kafe deneyimine hazırlanırken hem teorik bilgileri hem de pratik uygulamaları adım adım keşfedeceksin.</p>
                     <div className="flex items-center gap-2">
