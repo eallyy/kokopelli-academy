@@ -4,6 +4,7 @@ import { Select } from '@/components/select';
 import CourseVideoCard from '@/components/course-video-card';
 import MaterialDownloadCard from '@/components/material-download-card';
 import { VideoPlayer } from '@/components/video-player';
+import { VideoSupportModal } from '@/components/video-support-modal';
 
 export default function CourseVideo() {
   return (
@@ -15,8 +16,10 @@ export default function CourseVideo() {
             <div className="grid grid-cols-3 gap-4 p-4">
                 <div className="col-span-3 lg:col-span-2 gap-4">
                   <VideoPlayer />
-
-                  <div className="flex flex-col gap-4 mt-4">
+                  <div className="flex flex-col gap-4 mt-2 items-end">
+                    <VideoSupportModal />
+                  </div>
+                  <div className="flex flex-col gap-4 mt-2">
                     <h1 className="text-xl font-bold">Kahvenin Doğuşu: Etiyopya Efsaneleri ve Gerçekler</h1>
                     <p className="text-sm font-normal text-zinc-500 py-2">Bu videoda kahvenin tarihsel yolculuğuna çıkıyoruz. Efsanevi keçi çobanı Kaldi’den, Etiyopya’nın kahveyle özdeşleşen köylerine kadar kahvenin kökenine dair hem efsaneleri hem de tarihsel gerçekleri keşfedeceğiz. Kahvenin kültürel mirasını anlamak, bir baristanın kahveye olan yaklaşımını derinleştirir. Kahvenin büyülü doğuş hikayesini birlikte öğrenmeye hazır mısın?</p>
                     <h1 className="text-xl font-bold">Materyaller</h1>

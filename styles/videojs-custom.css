@@ -38,3 +38,73 @@
   background-color: #00a6f4 !important; /* sky-500 */
 }
 
+/* Outline focus color close */
+.video-js *:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+/* ControlBar Transparency and resizing */
+.video-js .vjs-control-bar {
+  padding-bottom: 40px;
+  padding-left: 6px;
+  padding-right : 6px;
+  background-color: transparent !important;
+}
+
+.video-js .vjs-progress-control {
+  margin-top: 15px;
+}
+
+/* Volume Panel */
+.video-js .vjs-volume-panel .vjs-volume-control {
+  background-color: rgba(0, 0, 0, 0.6); /* hafif transparan siyah */
+  border-radius: 12px;
+  padding: 4px;
+  transition: background-color 0.2s ease;
+}
+
+.video-js .vjs-volume-panel .vjs-volume-control:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+/* Quality and Captions Panel */
+.video-js .vjs-menu-content {
+  background-color: rgba(0, 0, 0, 0.6); 
+  border-radius: 12px;
+  height: fit-content;
+}
+
+.video-js .vjs-menu .vjs-menu-item {
+  padding: 6px 6px;
+  color: white;
+  border-radius: 4px;
+  transition: rgba(0, 0, 0) 0.2s ease;
+}
+
+.video-js .vjs-menu .vjs-menu-title {
+  padding: 6px 6px;
+}
+
+.video-js .vjs-menu .vjs-selected {
+  color: black;
+}
+
+.video-js .vjs-menu-button-popup .vjs-menu {
+  top: 120% !important;
+  transform: translateY(4px);
+}
+
+/* Put menus slightly down */
+.video-js .vjs-menu-button-popup:hover .vjs-menu {
+  display: block;
+  pointer-events: auto;
+}
+
+.video-js .vjs-menu-button-popup .vjs-menu {
+  margin-top: -8px; 
+  padding: 8px 0;
+  pointer-events: none; 
+}
+
