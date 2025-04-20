@@ -1,4 +1,3 @@
-import './globals.css';
 import { Button } from '@/components/button';
 
 export default function NotFound() {
